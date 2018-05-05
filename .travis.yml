@@ -2,8 +2,8 @@ language: bash
 services: docker
 
 env:
-  - JVM=openj9  JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.3.9
-  - JVM=zulu    JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.3.9
+  - JVM=openj9  JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.5.0
+  - JVM=zulu    JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.5.0
 
 
 before_script:
