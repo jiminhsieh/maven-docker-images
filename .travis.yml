@@ -5,12 +5,12 @@ env:
   - JVM=openj9  JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.5.3
   - JVM=zulu    JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.5.3
   - JVM=zulu    JVM_MAJOR=9 JVM_MINOR=04  MAVEN_VERSION=3.5.3
-  
+  - JVM=zulu    JVM_MAJOR=10              MAVEN_VERSION=3.5.3
 
 before_script:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
   - env | sort
-  - cd ${JVM}
+  - if [ ${JVM_MAJOR} -gt 9 ]; then cd ${JVM}_${JVM_MAJOR}; else cd ${JVM}; fi;
   - version_array=(${MAVEN_VERSION//./ })
   - IMAGE_NAME="jiminhsieh/maven:${JVM}_${JVM_MAJOR}-${version_array[0]}.${version_array[1]}"
   - IMAGE_FULL_NAME="jiminhsieh/maven:${JVM}_${JVM_MAJOR}u${JVM_MINOR}-${MAVEN_VERSION}"
