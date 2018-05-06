@@ -4,7 +4,8 @@ services: docker
 env:
   - JVM=openj9  JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.5.3
   - JVM=zulu    JVM_MAJOR=8 JVM_MINOR=162 MAVEN_VERSION=3.5.3
-
+  - JVM=zulu    JVM_MAJOR=9 JVM_MINOR=04  MAVEN_VERSION=3.5.3
+  
 
 before_script:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
